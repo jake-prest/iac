@@ -55,7 +55,7 @@ class ThreeTierAppStack(Stack):
             engine=rds.DatabaseInstanceEngine.postgres(version=rds.PostgresEngineVersion.VER_15_3),
             instance_type=ec2.InstanceType.of(ec2.InstanceClass.BURSTABLE2, ec2.InstanceSize.MICRO),
             vpc=vpc,
-            multi_az=False,
+            multi_az=True,
             allocated_storage=20,
             max_allocated_storage=100,
             credentials=rds.Credentials.from_secret(db_credentials_secret),
